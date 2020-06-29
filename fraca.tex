@@ -1,0 +1,115 @@
+\subsection{Formulação Fraca}
+
+O restultado da ponderação da equação de
+governo sobre o domínio é conhecida como
+\textbf{formulação fraca} \cite{anjos2007}.
+A seguir será explanada a formulação fraca.
+Para mais detalhes, consultar \cite{brenner1994}.
+Como o objetivo é encontrar uma solução
+aproximada, é aceitável supor que seja produzido
+um \textbf{Resíduo R} na equação de governo,
+isto é:
+
+\begin{equation}
+ \frac{d^2 u}{dx^2} - \textit{Pe} \frac{du}{dx} = R
+\end{equation}
+
+Buscaremos forçar o resíduo ser equivalente
+a zero num sentido médio \cite{finlayson1972}, logo:
+
+\begin{equation}
+ \int_{\Omega} Rwd\Omega = 0
+\end{equation}
+
+
+onde w é função peso. A função peso
+é um conjunto de funções arbitrárias
+dentro de um espaço de funções que será
+discutido à frente. Possuímos, então,
+as seguintes integrais:
+
+\begin{equation}
+ \int_{\Omega} \Bigg[\frac{d^2 u}{dx^2} - \textit{Pe} \frac{du}{dx} \Bigg] wd\Omega = 0
+\end{equation}
+
+Desenvolvendo a integral, temos:
+
+\begin{equation}
+ \int_{\Omega} \frac{d^2 u}{dx^2}wd\Omega - \textit{Pe}\int_{\Omega} \frac{du}{dx}wd\Omega = 0
+\end{equation}
+
+No termo difusivo, aplicaremos a integração
+por partes com o intuito de diminuir a ordem
+da derivada. Assim temos:
+
+\begin{equation} 
+  w\frac{du}{dx} - \int_{\Omega} \frac{du}{dx} \frac{dw}{dx} d\Omega 
+  - \textit{Pe}\int_{\Omega} \frac{du}{dx}wd\Omega = 0
+\end{equation}
+
+O primeiro termo da equação acima é conhecido
+como condição natural. Quando \textit{x = 1},
+\textit{w = 0} por hipótese. Assim, a equação será:
+
+\begin{equation}
+  - w(0)\frac{du}{dx}(0) - \int_{\Omega} \frac{du}{dx}  \frac{dw}{dx} d\Omega 
+  - \textit{Pe}\int_{\Omega} \frac{du}{dx}wd\Omega = 0
+\end{equation}
+
+isto é:
+
+\begin{equation}
+ - w(0)[u(0) - 1] - \int_{\Omega} \frac{du}{dx} \frac{dw}{dx} d\Omega 
+ - \textit{Pe}\int_{\Omega} \frac{du}{dx}wd\Omega = 0
+\end{equation}
+
+ou seja:
+
+\begin{equation}
+ - w(0)u(0) + w(0) - \int_{\Omega} \frac{du}{dx} \frac{dw}{dx} d\Omega 
+ - \textit{Pe}\int_{\Omega} \frac{du}{dx}wd\Omega = 0
+\end{equation}
+
+
+
+Simplificando a equação temos:
+
+\begin{equation}
+ \begin{align}
+  \textbf{k}(u,w) & = \int_\Omega \frac{du}{dx} \frac{dw}{dx} d\Omega + w(0)u(0) \\
+  \textbf{c}(u,w) & = \int_\Omega w \frac{du}{dx} d\Omega \\
+  \textbf{f}(u,w) & = - w(0) 
+ \end{align}
+\end{equation}
+
+Desta forma, a equação pode ser apresentada como:
+
+\begin{equation}
+ \textbf{k}(u,w) + \textit{Pe}  \textbf{c}(u,w) + \textbf{f}(u,w) = 0
+\end{equation}
+
+Dado o espaço de funções bases:
+
+\begin{equation}
+ \mathbb{U} = \{u \in \Omega \rightarrow \mathbb{R}
+ : \int_\Omega \frac {du}{dx}^2 d\Omega < \infty 
+ ; u(1) = 0\}
+\end{equation}
+
+Dado o espaço de funções pesos:
+
+\begin{equation}
+ \mathbb{W} = \{w \in \Omega \rightarrow \mathbb{R}
+ : \int_\Omega \frac {dw}{dx}^2 d\Omega < \infty 
+ ; w(1) = 0\}
+\end{equation}
+
+Desta forma, a formulação fraca consiste em
+encontrarmos a solução de $u \in \mathbb{U}$
+tal que:
+
+\begin{equation}
+ \textbf{k}(u,w) + \textit{Pe}  \textbf{c}(u,w) + \textbf{f}(u,w) = 0
+\end{equation}
+
+para todo w \in \mathbb{W}.

@@ -1,0 +1,24 @@
+\subsection{Formulação Forte}
+
+No método dos Elementos Finitos, a equação
+de governo com as condições de contorno
+é conhecida como \textbf{Formulação Forte}.
+Desta forma, a formulação forte é:
+
+\begin{equation}
+ \frac{d^2 u}{dx^2} - Pe \frac{du}{dx} = 0
+\end{equation}
+
+onde Pe é conhecido como Número de Peclet 
+que representa a razão entre as taxas de 
+transporte advectivo e difusivo. Esta equação
+é válida no domínio $\Omega = [0,1] \in \mathbb{R}$
+com as seguintes condições de contorno:
+
+\begin{equation}
+ \begin{aligned}
+  \frac{du}{dx} = u - 1 & $   para x = 0$ \\
+  u = 0 & $   para x = 1$
+ \end{aligned}
+\end{equation}
+
