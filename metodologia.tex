@@ -1,0 +1,26 @@
+\section{Metodologia}
+
+A elaboração do método matemático que descreve corretamente o fenômeno físico é de extrema importância para o sucesso do projeto. 
+As equações que governam a dinâmica do escoamento sanguíneo numa artéria coronária serão desenvolvidas segundo a hipótese do meio contínuo. 
+Dessa forma, os príncipios de conservação de massa, de quantidade de movimento linear e de espécie química poderão ser utilizados. 
+O sangue será considerado como um fluido incompressível, newtoniano e multifásico, 
+como também o coeficiente difusivo será aproximado como constante. 
+A equação de Navier-Stokes será apresentada segundo as variáveis primitivas (velocidade-pressão) com 
+a equação de transporte de espécie química sem geração interna
+usando uma abordagem Lagrangeana-Euleriana Arbitrária (ALE) \cite{donea}.
+
+\medskip
+O desenvolvimento computacional será feito em linguagem C++/Python \cite{c++} \cite{python} 
+utilizando o paradigma de orientação a objetos com objetivo de reaproveitar o código em outras pesquisas e 
+as equações de governo serão discretizadas em cima de uma malha tetraédrica não estruturada gerada através do software livre GMSH \cite{gmsh}. 
+Devido a restrição Babuska-Brezzi \cite{babuska} \cite{brezzi}, serão utiliados elementos distintos para os campos de velocidade e de pressão. 
+As equações serão discretizadas no tempo utilizando a expansão da série de Taylor e o Método semi-Lagrangeano \cite{pironneu} será usado com o intuito de reduzir as oscilações espúrias que são características das equações do tipo convecção-difusão.
+A formulação de Galerkin \cite{galerkin} será utilizada para discretizarmos as equações no espaço. 
+
+\medskip
+Para solução do sistema de equações lineares oriundo da utilização do método de elementos finitos, 
+deseja-se utilizar as técnicas mais modernas disponiveis em biblioteca pública de cálculo numérico. 
+O emprego destas técnicas permitirá a utilização de diversos tipos de precondicionadores e 
+métodos iterativos para uma eficiente solução do problema linear. 
+A visualização da solução numérica encontrada através da solução do sistema linear será realizada através do software livre PARAVIEW \cite{paraview}, 
+possibilitando alto nível de detalhamento da soluções numérica, através de cortes geométricos, interpolações e vetorização de campos.

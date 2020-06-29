@@ -1,21 +1,27 @@
-\section{Método dos Elementos Finitos}
+\section{Introdução}
 
-\subsection{Introdução}
+De acordo com a Organização Mundial da Saúde (OMS) \cite{site oms 2020}, mais pessoas morrem anualmente devido às doenças cardiovasculares (DCV) do que qualquer outra causa no mundo a cada ano. 
+Estima-se que 17,7 milhões de pessoas morreram por DCV em 2015, representando 31\% de todas as mortes no mundo. 
+Aproximadamente 40\% das mortes por DCV ocorreram devido às doenças na artéria coronária (DAC). 
+A principal causa da DAC é a aterosclerose que consiste no acúmulo de placas de gordura no interior da parede da artéria ocasionando uma diminuição do diâmetro do lúmen. 
+A aterosclerose pode ser prevenida com uma mudança de hábitos nocivos tais como: o uso de tabaco, o uso de álcool, falta de atividade física e dietas não saudáveis. \cite{site oms habitos} 
+Para uma abordagem corretiva, porém, dois tratamentos podem ser realizados: o bypass coronário (também conhecido como ponte de safena) e a angioplastia coronária transluminal percutânea (PTCA). 
+O PTCA é um procedimento minimamente invasivo onde um tubo aramado, chamado stents, é colocado. \cite{ref review PTCA}
+Os principais objetivos deste plano de trabalho são o desenvolvimento de um código em Elementos Finitos utilizando a descrição Lagrangeana-Euleriana Arbitrária (ALE) \cite{donea} para a equação de Navier-Stokes com o transporte de espécie química e 
+conhecer a dinâmica do escoamento sanguíneo numa artéria coronária com aterosclerose e com stents farmacológico implantado.
 
-Descreveremos neste capítulo o Método dos
-Elementos Finitos (MEF). Enquanto o Método
-das Diferenças Finitas (MDF) representa
-uma aproximação direta para às equações
-diferenciais, a proposta do procedimento
-dos elementos finitos é uma aproximação
-aplicada para os termos da formulação
-variacional \cite{zienkiewicz1965}. Existem
-três ingredientes básicos para chegarmos nas
-equações discretizadas \cite{fish2007}:
-
-\begin{itemize}
- \item Formulação Forte
- \item Formulação Fraca
- \item Funções de Aproximação
-\end{itemize}
+\medskip
+As equações que governam a dinâmica do escoamento sanguíneo numa artéria coronária serão desenvolvidas segundo a hipótese do meio contínuo. 
+Dessa forma, os príncipios de conservação de massa, de quantidade de movimento linear e de espécie química poderão ser utilizados. 
+O sangue será considerado como um fluido incompressível, newtoniano e multifásico, como também o coeficiente difusivo será aproximado como constante. 
+A equação de Navier-Stokes será apresentada segundo as variáveis primitivas (velocidade-pressão) com a equação de transporte de espécie química sem geração interna.
+ 
+\medskip
+O desenvolvimento computacional será feito em linguagem C++/Python \cite{c++} \cite{pyhon} utilizando o paradigma de orientação a objetos com objetivo de reaproveitar o código em outras pesquisas e 
+as equações de governo serão discretizadas em cima de uma malha tetraédrica não estruturada através do Método dos Elementos Finitos. 
+As equações serão discretizadas no tempo utilizando a expansão da série de Taylor e 
+o Método semi-Lagrangeano \cite{pironneau} será utilizado com o intuito de reduzir as oscilações espúrias que são características das equações do tipo convecção-difusão e 
+a formulação de Galerkin \cite{galerkin} será utilizada para discretizarmos as equações no espaço. 
+ 
+%Este projeto será desenvolvido no Laboratório de Ensaios Numéricos (LEN) do Grupo de Estudos e Simulações Ambientais em Reservatórios (GESAR), inaugurado em 2005 com o objetivo de desenvolver estudos e pesquisas visando à mitigação dos impactos ambientais em reservatórios de hidrelétricas. Tal laboratório dispõe de uma ampla infraestrutura, voltada a projetos de pesquisa e desenvolvimento. A utilização do método de elementos finitos possibilita a caracterização computacional de fenômenos físicos que ocorrem em sistemas físicos complexos como no presente projeto. É importante notar que o grupo de estudos ganhou alta capacitação em solucionar problemas físicos através do uso de simuladores numéricos e técnicas computacionais. Estes projetos foram financiados por agências de fomento nacionais, agregando ao grupo de pesquisa grande conhecimento na área de fenômenos de transporte.
 
