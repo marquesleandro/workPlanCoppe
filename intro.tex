@@ -7,14 +7,13 @@ A principal causa da DAC é a aterosclerose que consiste no acúmulo de placas d
 A aterosclerose pode ser prevenida com uma mudança de hábitos nocivos tais como: o uso de tabaco, o uso de álcool, falta de atividade física e dietas não saudáveis \cite{spring2013}. 
 Para uma abordagem corretiva, porém, dois tratamentos podem ser realizados: o bypass coronário (também conhecido como ponte de safena) e a angioplastia coronária transluminal percutânea (PTCA). 
 O PTCA é um procedimento minimamente invasivo onde um tubo aramado, chamado stents, é colocado \cite{sigwart1987}.
-Os principais objetivos deste plano de trabalho são o desenvolvimento de um código em Elementos Finitos utilizando a descrição Lagrangeana-Euleriana Arbitrária (ALE) \cite{donea2004} para a equação de Navier-Stokes com o transporte de espécie química e 
+Os principais objetivos deste plano de trabalho são o desenvolvimento de um código em Elementos Finitos utilizando a descrição Lagrangeana-Euleriana Arbitrária (ALE) \cite{donea2004} para a conservação de movimento linear e o transporte de espécie química para um fluido incompressível, multifásico e não-newtoniano, além de 
 conhecer a dinâmica do escoamento sanguíneo numa artéria coronária com aterosclerose e com stents farmacológico implantado.
 
 \bigskip
 As equações que governam a dinâmica do escoamento sanguíneo numa artéria coronária serão desenvolvidas segundo a hipótese do meio contínuo. 
 Dessa forma, os príncipios de conservação de massa, de quantidade de movimento linear e de espécie química poderão ser utilizados. 
-O sangue será considerado como um fluido incompressível, newtoniano e multifásico, como também o coeficiente difusivo será aproximado como constante. 
-A equação de Navier-Stokes será apresentada segundo as variáveis primitivas (velocidade-pressão) com a equação de transporte de espécie química sem geração interna \cite{batchelor1967}.
+O sangue será considerado como um fluido incompressível, não-newtoniano e multifásico, como também o coeficiente difusivo será aproximado como constante. 
  
 \bigskip
 O desenvolvimento computacional será feito em linguagem C++/Python \cite{c++} \cite{python} utilizando o paradigma de orientação a objetos com objetivo de reaproveitar o código em outras pesquisas e 
@@ -24,7 +23,7 @@ o Método semi-Lagrangeano \cite{pironneau1982} será utilizado com o intuito de
 a formulação de Galerkin \cite{zienkiewicz1965} será utilizada para discretizarmos as equações no espaço. 
 
 \bigskip 
-Este projeto visa ser desenvolvido no Laboratório de Transmissão e Tecnologia do Calor (LTTC) do Programa de Engenharia Mecânica da Coppe (PEM/COPPE). 
+Este projeto visa ser desenvolvido no Laboratório de Transmissão e Tecnologia do Calor (LTTC) do Programa de Engenharia Mecânica (PEM/COPPE). 
 Tal laboratório dispõe de uma ampla infraestrutura, 
 além de recursos computacionais de última geração, 
 voltada a projetos de pesquisa, desenvolvimento e inovação
