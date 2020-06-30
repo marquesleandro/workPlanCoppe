@@ -7,15 +7,15 @@ O sangue será considerado como um fluido incompressível, newtoniano e multifá
 como também o coeficiente difusivo será aproximado como constante. 
 A equação de Navier-Stokes será apresentada segundo as variáveis primitivas (velocidade-pressão) com 
 a equação de transporte de espécie química sem geração interna
-usando uma abordagem Lagrangeana-Euleriana Arbitrária (ALE) \cite{donea}.
+usando uma abordagem Lagrangeana-Euleriana Arbitrária (ALE) \cite{donea2004}.
 
 \medskip
 O desenvolvimento computacional será feito em linguagem C++/Python \cite{c++} \cite{python} 
 utilizando o paradigma de orientação a objetos com objetivo de reaproveitar o código em outras pesquisas e 
 as equações de governo serão discretizadas em cima de uma malha tetraédrica não estruturada gerada através do software livre GMSH \cite{gmsh}. 
-Devido a restrição Babuska-Brezzi \cite{babuska} \cite{brezzi}, serão utiliados elementos distintos para os campos de velocidade e de pressão. 
-As equações serão discretizadas no tempo utilizando a expansão da série de Taylor e o Método semi-Lagrangeano \cite{pironneu} será usado com o intuito de reduzir as oscilações espúrias que são características das equações do tipo convecção-difusão.
-A formulação de Galerkin \cite{galerkin} será utilizada para discretizarmos as equações no espaço. 
+Devido a restrição Babuska-Brezzi \cite{babuska1971} \cite{brezzi1974}, serão utiliados elementos distintos para os campos de velocidade e de pressão. 
+As equações serão discretizadas no tempo utilizando a expansão da série de Taylor e o Método semi-Lagrangeano \cite{pironneau1982} será usado com o intuito de reduzir as oscilações espúrias que são características das equações do tipo convecção-difusão.
+A formulação de Galerkin \cite{zienkiewicz1965} será utilizada para discretizarmos as equações no espaço. 
 
 \medskip
 Para solução do sistema de equações lineares oriundo da utilização do método de elementos finitos, 
